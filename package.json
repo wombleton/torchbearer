@@ -7,7 +7,11 @@
     "flatiron": "0.3.11",
     "ws": "^0.4.32",
     "jade.plugin": "^0.1.2",
-    "st": "^0.5.1"
+    "st": "^0.5.1",
+    "gulp": "^3.8.7",
+    "gulp-load-plugins": "^0.5.3",
+    "gulp-jshint": "^1.8.4",
+    "gulp-nodemon": "^1.0.4"
   },
   "devDependencies": {
     "api-easy": "0.3.2",
