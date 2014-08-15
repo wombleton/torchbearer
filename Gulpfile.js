@@ -6,9 +6,17 @@ gulp.task('lint', function() {
     .pipe(plugins.jshint());
 });
 
+gulp.task('browserify', function() {
+  gulp.src('assets/js/app.js')
+  .pipe(plugins.browserify({
+    debug: !gulp.env.production
+  }))
+  .pipe(gulp.dest('./public/js'));
+});
+
 gulp.task('develop', function() {
   plugins.nodemon({ script: 'index.js', ext: 'html js', ignore: [] })
-    .on('change', ['lint'])
+    .on('change', ['lint', 'browserify'])
     .on('restart', function () {
       console.log('restarted!');
     });
