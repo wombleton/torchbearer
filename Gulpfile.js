@@ -6,12 +6,31 @@ gulp.task('lint', function() {
     .pipe(plugins.jshint());
 });
 
+gulp.task('browserify', function() {
+  gulp.src('assets/js/app.js')
+  .pipe(plugins.browserify({
+    debug: !gulp.env.production
+  }))
+  .pipe(gulp.dest('./public/js'));
+});
+
+function nodemon() {
+  plugins.nodemon({ script: 'index.js', ext: 'js', ignore: [ 'assets/**/*', 'public/**/*' ] })
+  .on('change', ['lint'])
+  .on('restart', function () {
+    console.log('restarted!');
+  });
+}
+
+function watch() {
+  plugins.watch({glob: 'assets/js/**/*.js'}, function() {
+    gulp.start('browserify');
+  });
+}
+
 gulp.task('develop', function() {
-  plugins.nodemon({ script: 'index.js', ext: 'html js', ignore: [] })
-    .on('change', ['lint'])
-    .on('restart', function () {
-      console.log('restarted!');
-    });
+  nodemon();
+  watch();
 });
 
 gulp.task('default', [ 'develop' ]);

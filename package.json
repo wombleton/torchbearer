@@ -7,15 +7,18 @@
     "flatiron": "0.3.11",
     "ws": "^0.4.32",
     "jade.plugin": "^0.1.2",
-    "st": "^0.5.1",
-    "gulp": "^3.8.7",
-    "gulp-load-plugins": "^0.5.3",
-    "gulp-jshint": "^1.8.4",
-    "gulp-nodemon": "^1.0.4"
+    "st": "^0.5.1"
   },
   "devDependencies": {
     "api-easy": "0.3.2",
-    "vows": "0.6.x"
+    "vows": "0.6.x",
+    "gulp-browserify": "^0.5.0",
+    "gulp": "^3.8.7",
+    "gulp-load-plugins": "^0.5.3",
+    "gulp-jshint": "^1.8.4",
+    "gulp-nodemon": "^1.0.4",
+    "angular": "^1.2.21",
+    "gulp-watch": "^0.6.9"
   },
   "scripts": {
     "test": "vows --spec",
