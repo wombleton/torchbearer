@@ -21,7 +21,7 @@ gulp.task('node-sass', function() {
 });
 
 gulp.task('jade', function() {
-  gulp.src('assets/views/**/*.jade')
+  gulp.src('assets/**/*.jade')
   .pipe(plugins.jade())
   .pipe(gulp.dest('./public'));
 });
@@ -41,7 +41,7 @@ function watch() {
   plugins.watch({glob: 'assets/sass/**/*.scss'}, function() {
     gulp.start('node-sass');
   });
-  plugins.watch({glob: 'assets/views/**/*.jade' }, function() {
+  plugins.watch({glob: 'assets/**/*.jade' }, function() {
     gulp.start('jade');
   });
 }
