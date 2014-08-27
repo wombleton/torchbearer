@@ -10,7 +10,7 @@ app.use(flatiron.plugins.static, {
   dir: __dirname + '/public'
 });
 app.use(require('jade.plugin').plugin, {
-  dir: __dirname + '/assets/views'
+  dir: __dirname + '/views'
 });
 
 app.router.get('/', function () {
