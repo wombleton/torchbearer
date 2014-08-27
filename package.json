@@ -18,7 +18,8 @@
     "gulp-jshint": "^1.8.4",
     "gulp-nodemon": "^1.0.4",
     "angular": "^1.2.21",
-    "gulp-watch": "^0.6.9"
+    "gulp-watch": "^0.6.9",
+    "gulp-sass": "^0.7.3"
   },
   "scripts": {
     "test": "vows --spec",

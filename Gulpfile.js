@@ -14,6 +14,12 @@ gulp.task('browserify', function() {
   .pipe(gulp.dest('./public/js'));
 });
 
+gulp.task('node-sass', function() {
+  gulp.src('assets/sass/*.scss')
+  .pipe(plugins.sass())
+  .pipe(gulp.dest('./public/css'));
+});
+
 function nodemon() {
   plugins.nodemon({ script: 'index.js', ext: 'js', ignore: [ 'assets/**/*', 'public/**/*' ] })
   .on('change', ['lint'])
@@ -25,6 +31,9 @@ function nodemon() {
 function watch() {
   plugins.watch({glob: 'assets/js/**/*.js'}, function() {
     gulp.start('browserify');
+  });
+  plugins.watch({glob: 'assets/js/**/*.js'}, function() {
+    gulp.start('node-sass');
   });
 }
 
