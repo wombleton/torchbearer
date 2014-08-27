@@ -32,7 +32,7 @@ function watch() {
   plugins.watch({glob: 'assets/js/**/*.js'}, function() {
     gulp.start('browserify');
   });
-  plugins.watch({glob: 'assets/js/**/*.js'}, function() {
+  plugins.watch({glob: 'assets/sass/**/*.scss'}, function() {
     gulp.start('node-sass');
   });
 }
