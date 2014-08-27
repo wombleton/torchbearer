@@ -20,6 +20,12 @@ gulp.task('node-sass', function() {
   .pipe(gulp.dest('./public/css'));
 });
 
+gulp.task('jade', function() {
+  gulp.src('assets/views/**/*.jade')
+  .pipe(plugins.jade())
+  .pipe(gulp.dest('./public'));
+});
+
 function nodemon() {
   plugins.nodemon({ script: 'index.js', ext: 'js', ignore: [ 'assets/**/*', 'public/**/*' ] })
   .on('change', ['lint'])
@@ -34,6 +40,9 @@ function watch() {
   });
   plugins.watch({glob: 'assets/sass/**/*.scss'}, function() {
     gulp.start('node-sass');
+  });
+  plugins.watch({glob: 'assets/views/**/*.jade' }, function() {
+    gulp.start('jade');
   });
 }
 
