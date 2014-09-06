@@ -1,1 +1,1 @@
-var angular = require('angular');
+var tb = require('./tb');

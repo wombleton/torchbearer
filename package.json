@@ -7,7 +7,8 @@
     "flatiron": "0.3.11",
     "ws": "^0.4.32",
     "jade.plugin": "^0.1.2",
-    "st": "^0.5.1"
+    "st": "^0.5.1",
+    "angular-route": "^1.2.17-build.163.1"
   },
   "devDependencies": {
     "api-easy": "0.3.2",
@@ -19,7 +20,8 @@
     "gulp-nodemon": "^1.0.4",
     "angular": "^1.2.21",
     "gulp-watch": "^0.6.9",
-    "gulp-sass": "^0.7.3"
+    "gulp-sass": "^0.7.3",
+    "gulp-jade": "^0.7.0"
   },
   "scripts": {
     "test": "vows --spec",
