@@ -27,7 +27,14 @@ gulp.task('jade', function() {
 });
 
 function nodemon() {
-  plugins.nodemon({ script: 'index.js', ext: 'js', ignore: [ 'assets/**/*', 'public/**/*' ] })
+  plugins.nodemon({
+    script: 'index.js',
+    env: {
+      NODE_ENV: 'development'
+    },
+    ext: 'js',
+    ignore: [ 'assets/**/*', 'public/**/*' ]
+  })
   .on('change', ['lint'])
   .on('restart', function () {
     console.log('restarted!');

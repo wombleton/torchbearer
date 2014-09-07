@@ -7,6 +7,7 @@ app.config.file({ file: path.join(__dirname, 'config', 'config.json') });
 
 app.use(flatiron.plugins.http);
 app.use(flatiron.plugins.static, {
+  cache: process.env.NODE_ENV !== 'development',
   dir: __dirname + '/public'
 });
 app.use(require('jade.plugin').plugin, {

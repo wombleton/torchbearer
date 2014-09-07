@@ -1,1 +1,6 @@
-h1 HI
+.row
+	.col-md-6
+		h3 Players
+		.list-group
+			.list-group-item(ng-repeat="player in players")
+				ng-include(src="'partials/_player.html'")
