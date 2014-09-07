@@ -1,0 +1,10 @@
+p 
+  | You want to: 
+  i {{player.action}} with {{player.weapon}}
+  .btn-group(data-toggle="buttons")
+    label.btn.btn-default(ng-repeat="move in ['Attack', 'Defend', 'Feint', 'Manuever']" ng-class="{ active: move === player.action }")
+      input(type="radio" ng-model="player.action" value="{{move}}") 
+      | {{move}}
+p 
+  | Your weapon is: 
+  input(ng-model="player.weapon")
