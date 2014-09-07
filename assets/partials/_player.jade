@@ -1,0 +1,5 @@
+h4.list-group-item-header {{player.name}}
+.row
+  .col-md-3(ng-repeat="move in player.moves")
+    h4 {{move.name}}
+    p {{move.skill}} {{move.level}}
