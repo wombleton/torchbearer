@@ -1,4 +1,6 @@
-h4.list-group-item-header {{player.name}}
+h4.list-group-item-header 
+  | {{player.name}} 
+  label.label.label-default(ng-repeat="condition in player.conditions") {{condition}}
 .row
   .col-md-3(ng-repeat="move in player.moves")
     h4 {{move.name}}

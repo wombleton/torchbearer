@@ -1,0 +1,12 @@
+.row
+  .col-md-4(ng-repeat="i in [] | range:3")
+    .form-group
+      .btn-group(data-toggle="buttons")
+        label.btn.btn-default(ng-repeat="p in players" ng-class="{ active: scripts[i-1].actor === p.name }")
+          input(type="radio" ng-model="scripts[i-1].actor" value="{{p.name}}") 
+          | {{p.name}}
+    .form-group
+      .btn-group(data-toggle="buttons")
+        label.btn.btn-default(ng-repeat="move in ['Attack', 'Defend', 'Feint', 'Manuever']" ng-class="{ active: scripts[i-1].move === move }")
+          input(type="radio" ng-model="scripts[i-1].move" value="{{move}}") 
+          | {{move}}

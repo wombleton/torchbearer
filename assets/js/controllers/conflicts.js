@@ -7,6 +7,8 @@ module.exports = controllers.controller('ConflictCtrl', [
     $scope.players = [
       {
         name: 'Nale',
+        conditions: [ 'Hungry', 'Thirsty' ],
+        action: 'Attack',
         moves: [
           {
             name: 'Attack',
@@ -29,19 +31,43 @@ module.exports = controllers.controller('ConflictCtrl', [
             level: 6
           }
         ],
-        weapon: {
-          name: 'Warhammer',
-          mods: {
-            A: {
-              dice: 1
-            },
-            D: {
-              dice: -1
-            }
+        weapon: 'Warhammer'
+      },
+      {
+        name: 'Walrus',
+        conditions: [ 'Hungry', 'Thirsty' ],
+        action: 'Attack',
+        moves: [
+          {
+            name: 'Attack',
+            skill: 'Fighter',
+            level: 4
+          },
+          {
+            name: 'Defend',
+            skill: 'Health',
+            level: 6
+          },
+          {
+            name: 'Feight',
+            skill: 'Fighter',
+            level: 4
+          },
+          {
+            name: 'Manuever',
+            skill: 'Health',
+            level: 6
           }
-        }
+        ],
+        weapon: 'Warhammer'
       }
     ];
+    $scope.player = $scope.players[0];
     // end faked player data
+    $scope.scripts = [{}, {}, {}];
+
+    $scope.lock = function() {
+      $scope.locked = true;
+    }
   }
 ]);

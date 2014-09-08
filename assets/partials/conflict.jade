@@ -1,3 +1,11 @@
+.row(ng-hide="locked")
+	.col-md-12
+		h3 New Round
+		ng-include(src="'partials/_new_round.html'")
+.row(ng-show="locked")
+	.col-md-12
+		h3 Script
+		ng-include(src="'partials/_script.html'")
 .row
 	.col-md-6
 		h3 Players

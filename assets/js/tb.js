@@ -8,6 +8,9 @@ tb = angular.module('tb', [
   'tb.controllers'
 ]);
 
+// add range filter
+require('./directives/range');
+
 tb.config(['$routeProvider',
   function($routeProvider) {
     $routeProvider
