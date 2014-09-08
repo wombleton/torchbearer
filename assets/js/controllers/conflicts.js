@@ -36,5 +36,8 @@ module.exports = controllers.controller('ConflictCtrl', [
     ];
     $scope.player = $scope.players[0];
     // end faked player data
+    $scope.lock = function() {
+      $scope.locked = true;
+    }
   }
 ]);
