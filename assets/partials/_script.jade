@@ -2,9 +2,12 @@
   .col-md-4(ng-repeat="i in [] | range:3")
     .form-group
       .btn-group(data-toggle="buttons")
-        label.btn.btn-default(ng-repeat="p in players" ng-class="{ active: scripts[i-1].actor === p.name }")
-          input(type="radio" ng-model="scripts[i-1].actor" value="{{p.name}}") 
+        label.btn.btn-default(ng-repeat="p in players" ng-class="{ active: scripts[i-1].actor.name === p.name }")
+          input(type="radio" ng-model="scripts[i-1].actor" ng-value="{{p}}") 
           | {{p.name}}
+    .form-group(ng-show="scripts[i-1].actor")
+      p 
+        i {{scripts[i-1].actor.name}} wants to {{scripts[i-1].actor.action}} with {{scripts[i-1].actor.weapon}}
     .form-group
       .btn-group(data-toggle="buttons")
         label.btn.btn-default(ng-repeat="move in ['Attack', 'Defend', 'Feint', 'Manuever']" ng-class="{ active: scripts[i-1].move === move }")
